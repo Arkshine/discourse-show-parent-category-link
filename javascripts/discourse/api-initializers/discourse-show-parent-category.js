@@ -16,6 +16,8 @@ export default apiInitializer("1.8.0", (api) => {
       return defaultHtml;
     }
 
+    // check
+
     const parentCat = Category.findById(get(category, "parent_category_id"));
 
     if (!parentCat) {
@@ -54,7 +56,18 @@ export default apiInitializer("1.8.0", (api) => {
     ${descriptionText ? 'title="' + descriptionText + '" ' : ""}
   >`;
 
+    // get the full category name
     let categoryName = escapeExpression(get(parentCat, "name"));
+
+    // extract the name between brackets
+    let regex = /\[(.*?)\]/;
+    let match = categoryName.match(regex);
+
+    if (match) {
+        categoryName = match[0];
+    } else {
+        categoryName = escapeExpression(get(parentCat, "name"));
+    }
 
     if (siteSettings.support_mixed_text_direction) {
       categoryDir = 'dir="auto"';
