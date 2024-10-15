@@ -1,5 +1,3 @@
-# discourse-show-parent-category
+# Discourse Component - Show parent Category
 
-**Theme Summary**
-
-For more information, please see: **url to meta topic**
+Originaly forked from https://github.com/Arkshine/discourse-show-parent-category-link. I cleaned some useless code and added some info.
