@@ -45,16 +45,16 @@ export default apiInitializer("1.8.0", (api) => {
     }
 
     html += `<span
-    ${dataAttributes}      
-    data-drop-close="true"
-    class="${classNames}"
-    ${
-      opts.previewColor
-        ? `style="--category-badge-color: #${parentCat.color}"`
-        : ""
-    }
-    ${descriptionText ? 'title="' + descriptionText + '" ' : ""}
-  >`;
+      ${dataAttributes}      
+          data-drop-close="true"
+          class="${classNames}"
+      ${
+        opts.previewColor
+          ? `style="--category-badge-color: #${parentCat.color}"`
+          : ""
+      }
+      ${descriptionText ? 'title="' + descriptionText + '" ' : ""}
+          >`;
 
     // get the full category name
     let categoryName = escapeExpression(get(parentCat, "name"));
